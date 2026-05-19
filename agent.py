@@ -13,7 +13,7 @@ class SupportAgent:
     def __init__(self):
         """Initialize the support agent"""
         self.client = Groq(api_key=os.getenv("GROQ_API_KEY"))
-        self.model = "qwen/qwen3-32b"
+        self.model = "llama-3.3-70b-versatile"
         self.customer_history = {}
         
     def get_customer_history(self, customer_id: str) -> str:
@@ -98,7 +98,8 @@ Provide a helpful support response. Keep it brief and generic.
                     {"role": "user", "content": user_prompt}
                 ],
                 max_tokens=200,
-                temperature=0.7
+                temperature=0.7,
+                reasoning_format="hidden"
             )
             
             agent_response = response.choices[0].message.content
