@@ -50,4 +50,4 @@ venv\Scripts\activate.bat
 pip install -r requirements.txt
 
 # Create .env file with API keys
-# Add GROQ_API_KEY and HINDSIGHT_API_KEY
+# Add GROQ_API_KEY and HINDSIGHT_API_KEY.
